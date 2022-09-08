@@ -1,0 +1,9 @@
+ file: {
+    fieldname: 'filedata',
+    originalname: '1.jpg',
+    encoding: '7bit',
+    mimetype: 'image/jpeg',
+    destination: 'uploads',
+    filename: 'eea4f2b80529289349888118fda4e0a4',
+    path: 'uploads\\eea4f2b80529289349888118fda4e0a4',
+    size: 4050

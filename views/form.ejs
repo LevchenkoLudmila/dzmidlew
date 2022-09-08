@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
-    <title>Multer test</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+   <title>contacts</title>
 </head>
 <body>
-    <form method="post" enctype="multipart/form-data" action="/upload" name="testForm">
-        <input type="file" name="filedata">
-        <input type="submit" value="Submit">
-        </form>
-    <script>
-        const formEl = document.forms.testForm;
-        formEl.addEventListener('submit', async (ev) => {
-            ev.preventDefault();
-            const formdata = new FormData(ev.target);
-            const { data } = await axios.post('/upload1', formdata);
-        });
-    </script>
+   <%- include('./partials/nav.ejs') %>
+   <h1>Основная страница</h1>
+   <form method="post" enctype="multipart/form-data" action="/upload" name="testForm">
+      <input type="file" name="filedata1">
+      <input type="submit" value="Submit">
+      </form>
+  <script>
+      
+      const formEl = document.forms.testForm;
+      formEl.addEventListener('submit', async (ev) => {
+          ev.preventDefault();
+          const formdata = new FormData(ev.target);
+          formdata.append("name", name);
+          //formdata.append("file", file);
+          const { data } = await axios.post('/upload1', formdata);
+      });
+
+  </script>
 </body>
 </html>
